@@ -2,21 +2,17 @@
 
 int main(int argc, char *argv[])
 {
-    unsigned int x;
-    int b;
+    int second;
+    int hour, minute, remain_second;
 
-    printf("input a number : ");
-    scanf("%ui", &x);
+    printf("input the second : ");
+    scanf("%i", &second);
 
-    for (b = 0; x != 0; x >>= 1)
-    {
-        if (x & 1)
-        {
-            b++;
-        }
-    }
+    hour = second / 3600;
+    minute = (second % 3600) / 60;
+    remain_second = second % 60;
 
-    printf("The result is : %i\n", b);
+    printf("The time for %i second is %i : %i : %i\n", second, hour, minute, remain_second);
 
     return 0;
 }
